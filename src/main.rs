@@ -1,13 +1,9 @@
+#![allow(dead_code, unused_imports)]
 mod code_practice;
 mod imports;
-use imports::MyData;
-use imports::test_function;
+
+use code_practice::cp_26_1_string_split::{string_split, test_string_split};
 
 fn main() {
-    let my_data = MyData {
-        name: "John Smith".to_string(),
-        id: 10093,
-    };
-
-    test_function(my_data);
+    test_string_split();
 }
