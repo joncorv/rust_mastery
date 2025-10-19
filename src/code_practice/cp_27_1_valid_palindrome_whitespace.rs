@@ -9,12 +9,14 @@ pub fn valid_palindrome_whitespace(s: String) -> bool {
         let (start_char, end_char);
 
         'start: loop {
-            if s[start] == ' ' {
-                start += 1;
-            } else {
-                start_char = s[start];
-                start += 1;
-                break 'start;
+            if let Some(val) = s.get(start) {
+                if *val == ' ' {
+                    start += 1;
+                } else {
+                    start_char = val;
+                    start += 1;
+                    break 'start;
+                }
             }
         }
 
