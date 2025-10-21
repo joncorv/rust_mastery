@@ -3,3 +3,4 @@ pub mod cp_27_1_valid_palindrome;
 pub mod cp_27_1_valid_palindrome_sentence;
 pub mod cp_27_3_array_intersection;
 pub mod cp_27_7_2sum;
+pub mod cp_27_9_sort_valley_shaped_array;
