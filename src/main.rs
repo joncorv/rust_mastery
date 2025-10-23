@@ -11,5 +11,7 @@ fn main() {
     // cp_27_07_2sum::test_two_sum();
     // cp_27_09_sort_valley_shaped_array::test_sort_valley_shaped_array();
     // cp_27_11_interval_intersection::test_interval_intersection();
-    cp_27_13_parity_sorting::test_parity_sorting();
+    // cp_27_13_parity_sorting::test_parity_sorting();
+    // cp_27_15_quicksort_partition::test_quicksort_partition();
+    cp_27_18_shift_word_to_back::test_shift_word_to_back();
 }
