@@ -13,5 +13,7 @@ fn main() {
     // cp_27_11_interval_intersection::test_interval_intersection();
     // cp_27_13_parity_sorting::test_parity_sorting();
     // cp_27_15_quicksort_partition::test_quicksort_partition();
-    cp_27_18_shift_word_to_back::test_shift_word_to_back();
+    // cp_27_18_shift_word_to_back::test_shift_word_to_back();
+    cp_28_00_grid_playground::test_grid_playground();
+    // cp_28_01_chess_moves::test_chess_moves();
 }

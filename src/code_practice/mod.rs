@@ -8,3 +8,5 @@ pub mod cp_27_11_interval_intersection;
 pub mod cp_27_13_parity_sorting;
 pub mod cp_27_15_quicksort_partition;
 pub mod cp_27_18_shift_word_to_back;
+pub mod cp_28_00_grid_playground;
+pub mod cp_28_01_chess_moves;
