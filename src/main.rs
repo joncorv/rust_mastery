@@ -15,5 +15,6 @@ fn main() {
     // cp_27_15_quicksort_partition::test_quicksort_partition();
     // cp_27_18_shift_word_to_back::test_shift_word_to_back();
     // cp_28_00_grid_playground::test_grid_playground();
-    cp_28_01_chess_moves::test_chess_moves();
+    // cp_28_01_chess_moves::test_chess_moves();
+    // cp_29_01_search_in_sorted_array::tes
 }
