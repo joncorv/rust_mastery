@@ -1,14 +1,15 @@
 pub fn chess_moves(room: Vec<Vec<char>>, piece: String, r: usize, c: usize) -> Vec<Vec<usize>> {
-    let result: Vec<Vec<usize>> = Vec::new();
+    let mut result: Vec<Vec<usize>> = Vec::new();
 
     if room.is_empty() {
         return result;
     }
 
-    let len_rows = room[0].len();
-    let len_cols= room.len();
+    let queen = "queen".to_string();
+    let king = "king".to_string();
+    let knight = "knight".to_string();
 
-    let king_directions: Vec<Vec<i32>> = vec![
+    let royal_directions: Vec<Vec<i32>> = vec![
         vec![1, 0],
         vec![1, 1],
         vec![0, 1],
@@ -19,18 +20,67 @@ pub fn chess_moves(room: Vec<Vec<char>>, piece: String, r: usize, c: usize) -> V
         vec![1, -1],
     ];
 
-    for dirs in king_directions {
-        let new_r = r + dirs[0];
-        let new_c = c + dirs[1];
+    let knight_directions: Vec<Vec<i32>> = vec![
+        vec![-2, -1],
+        vec![-1, -2],
+        vec![-2, 1],
+        vec![-1, 2],
+        vec![2, -1],
+        vec![1, -2],
+        vec![2, 1],
+        vec![1, 2],
+    ];
 
-        if is_valid(n, r, c)
+    if piece == "king".to_string() {
+        for dirs in royal_directions {
+            let r = r as i32;
+            let c = c as i32;
+            let new_r = r + dirs[0];
+            let new_c = c + dirs[1];
+
+            if is_valid(room.clone(), new_r, new_c) {
+                result.push(vec![new_r as usize, new_c as usize]);
+            }
+        }
+    } else if piece == "knight".to_string() {
+        for dirs in knight_directions {
+            let r = r as i32;
+            let c = c as i32;
+            let new_r = r + dirs[0];
+            let new_c = c + dirs[1];
+
+            if is_valid(room.clone(), new_r, new_c) {
+                result.push(vec![new_r as usize, new_c as usize]);
+            }
+        }
+    } else if piece == "queen".to_string() {
+        for dirs in royal_directions {
+            let r = r as i32;
+            let c = c as i32;
+            let mut new_r = r + dirs[0];
+            let mut new_c = c + dirs[1];
+
+            'check_validity: loop {
+                if is_valid(room.clone(), new_r, new_c) {
+                    result.push(vec![new_r as usize, new_c as usize]);
+                    new_r += dirs[0];
+                    new_c += dirs[1];
+                } else {
+                    break 'check_validity;
+                }
+            }
+        }
     }
 
     return result;
 }
 
-fn is_valid(n: i32, r: i32, c: i32) -> bool {
-    return r >= 0 && r < n && c >= 0 && c < n;
+fn is_valid(room: Vec<Vec<char>>, r: i32, c: i32) -> bool {
+    return r >= 0
+        && r < room[0].len() as i32
+        && c >= 0
+        && c < room.len() as i32
+        && room[r as usize][c as usize] != 'x';
 }
 
 pub fn test_chess_moves() {
@@ -38,7 +88,7 @@ pub fn test_chess_moves() {
 
     // define square grid size
     let size_grid: usize = 9;
-    let piece = "king".to_string();
+    let piece = "queen".to_string();
     let (r, c): (usize, usize) = (4, 3);
 
     // iterate to build grid with default values
