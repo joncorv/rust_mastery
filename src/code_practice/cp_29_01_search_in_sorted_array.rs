@@ -5,7 +5,7 @@ pub fn search_in_sorted_array(arr: Vec<i32>, target: i32) -> usize {
 
     let (mut left, mut right): (usize, usize) = (0, arr.len() - 1);
 
-    while left <= right {
+    while right - left > 1 {
         if arr[left] == target {
             return left;
         } else if arr[right] == target {
