@@ -17,4 +17,5 @@ fn main() {
     // cp_28_00_grid_playground::test_grid_playground();
     // cp_28_01_chess_moves::test_chess_moves();
     // cp_29_01_search_in_sorted_array::tes
+    cp_29_03_valley_bottom::test_valley_bottom();
 }
