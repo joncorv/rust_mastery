@@ -18,5 +18,6 @@ fn main() {
     // cp_28_01_chess_moves::test_chess_moves();
     // cp_29_01_search_in_sorted_array::tes
     // cp_29_03_valley_bottom::test_valley_bottom();
-    cp_29_04_two_array_two_sum::test_two_array_two_sum();
+    // cp_29_04_two_array_two_sum::test_two_array_two_sum();
+    cp_29_05_target_count_divisible_by_k::test_target_count_divisible_by_k();
 }
