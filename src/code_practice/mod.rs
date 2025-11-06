@@ -14,3 +14,4 @@ pub mod cp_29_01_search_in_sorted_array;
 pub mod cp_29_03_valley_bottom;
 pub mod cp_29_04_two_array_two_sum;
 pub mod cp_29_05_target_count_divisible_by_k;
+pub mod cp_30_01_account_sharing;
