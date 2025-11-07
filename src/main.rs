@@ -20,5 +20,6 @@ fn main() {
     // cp_29_03_valley_bottom::test_valley_bottom();
     // cp_29_04_two_array_two_sum::test_two_array_two_sum();
     // cp_29_05_target_count_divisible_by_k::test_target_count_divisible_by_k();
-    cp_30_01_account_sharing::test_account_sharing();
+    // cp_30_01_account_sharing::test_account_sharing();
+    cp_30_03_most_frequent_octet::test_most_frequent_octet();
 }
