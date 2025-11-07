@@ -18,3 +18,4 @@ pub mod cp_30_01_account_sharing;
 pub mod cp_30_03_most_frequent_octet;
 pub mod cp_30_04_multi_account_cheating;
 pub mod cp_30_06_find_all_squares;
+pub mod cp_30_08_cheater_detection;

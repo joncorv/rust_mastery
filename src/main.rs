@@ -23,5 +23,5 @@ fn main() {
     // cp_30_01_account_sharing::test_account_sharing();
     // cp_30_03_most_frequent_octet::test_most_frequent_octet();
     // cp_30_04_multi_account_cheating::test_multi_account_cheating();
-    cp_30_06_find_all_squares::test_find_all_squares();
+    // cp_30_06_find_all_squares::test_find_all_squares();
 }
