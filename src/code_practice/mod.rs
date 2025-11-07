@@ -19,3 +19,4 @@ pub mod cp_30_03_most_frequent_octet;
 pub mod cp_30_04_multi_account_cheating;
 pub mod cp_30_06_find_all_squares;
 pub mod cp_30_08_cheater_detection;
+pub mod cp_30_09_product_of_alphabetical_sum;
