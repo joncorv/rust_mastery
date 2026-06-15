@@ -28,5 +28,5 @@ fn main() {
     // cp_30_06_find_all_squares::test_find_all_squares();
     // cp_30_09_product_of_alphabetical_sum::test_product_of_alphabetical_sums();
     // pg_01_recursion_simple::pg_01_recursion_simple();
-    pg_02_recursion_max_value::pg_02_recursion_max_value();
+    // pg_02_recursion_max_value::pg_02_recursion_max_value();
 }

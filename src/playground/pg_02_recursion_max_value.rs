@@ -5,10 +5,11 @@ pub fn pg_02_recursion_max_value() {
 
     fn dfs(vals: &[i32], current: i32, visited: &mut Vec<i32>, max_value: &mut i32) {
         visited.push(current);
+        println!("we're now on {:?}", current.clone());
+
         if current > *max_value {
             *max_value = current;
         }
-        println!("we're now on {:?}", current.clone());
 
         for val in vals {
             if !visited.contains(val) {
