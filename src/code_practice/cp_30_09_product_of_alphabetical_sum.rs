@@ -17,8 +17,6 @@ pub fn product_of_alphabetical_sums(arr: Vec<String>, target: i32) -> bool {
         string_sums.push(sum);
         hash_sums.insert(sum);
     }
-
-    // let (mut left, mut right): (usize, usize);
     let mut left: usize;
     let mut right: usize;
     let num_sums = string_sums.len();
@@ -28,7 +26,6 @@ pub fn product_of_alphabetical_sums(arr: Vec<String>, target: i32) -> bool {
         right = left;
         while right < num_sums {
             let search_target = (string_sums[left] * string_sums[right]) / target;
-            println!("left: {left}, right: {right}, search_target: {search_target}");
             if hash_sums.contains(&search_target) {
                 return true;
             } else {
@@ -37,7 +34,6 @@ pub fn product_of_alphabetical_sums(arr: Vec<String>, target: i32) -> bool {
         }
         left += 1;
     }
-
     false
 }
 
@@ -45,7 +41,6 @@ pub fn test_product_of_alphabetical_sums() {
     let arr = vec!["abc".to_string(), "def".to_string(), "hig".to_string()];
     let target: i32 = 24;
     let test_results = product_of_alphabetical_sums(arr.clone(), target.clone());
-
     println!("test data: {arr:?}");
     println!("results: {test_results:?}");
 }

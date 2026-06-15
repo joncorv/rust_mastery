@@ -1,7 +1,9 @@
 #![allow(dead_code, unused_imports, unused_variables)]
 mod code_practice;
+mod playground;
 
 use code_practice::*;
+use playground::*;
 
 fn main() {
     // cp_26_01_string_split::test_string_split();
@@ -24,5 +26,7 @@ fn main() {
     // cp_30_03_most_frequent_octet::test_most_frequent_octet();
     // cp_30_04_multi_account_cheating::test_multi_account_cheating();
     // cp_30_06_find_all_squares::test_find_all_squares();
-    cp_30_09_product_of_alphabetical_sum::test_product_of_alphabetical_sums();
+    // cp_30_09_product_of_alphabetical_sum::test_product_of_alphabetical_sums();
+    // pg_01_recursion_simple::pg_01_recursion_simple();
+    pg_02_recursion_max_value::pg_02_recursion_max_value();
 }

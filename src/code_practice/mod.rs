@@ -20,3 +20,4 @@ pub mod cp_30_04_multi_account_cheating;
 pub mod cp_30_06_find_all_squares;
 pub mod cp_30_08_cheater_detection;
 pub mod cp_30_09_product_of_alphabetical_sum;
+pub mod cp_30_10_action_log_anomolies;
