@@ -6,7 +6,7 @@ pub struct Context {
     success_path: Vec<(i8, i8)>,
 }
 
-fn get_valid_neighbors(maze: &Vec<Vec<i8>>, cell: (i8, i8)) -> Vec<(i8, i8)> {
+fn get_valid_neighbors(maze: &[Vec<i8>], cell: (i8, i8)) -> Vec<(i8, i8)> {
     let mut valid_neighbors = Vec::new();
     let dirs: Vec<(i8, i8)> = vec![(-1, 0), (1, 0), (0, 1), (0, -1)];
     for dir in dirs {

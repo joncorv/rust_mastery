@@ -31,5 +31,6 @@ fn main() {
     // pg_02_recursion_max_value::pg_02_recursion_max_value();
     // pg_03_recursion_permutations::pg_02_recursion_permutations();
     // pg_04_recursion_permutations_v2::pg_02_recursion_permutations_v2();
-    pg_05_graph_maze::test_graph_maze();
+    // pg_05_graph_maze::test_graph_maze();
+    // pg_06_lifetime_annotations::test_get_largest();
 }
