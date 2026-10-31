@@ -1,3 +1,6 @@
+/// This is string split. It's really cool.
+/// This goes right in the Docs
+///
 pub fn string_split(s: String, c: char) -> Vec<String> {
     let mut result_array: Vec<String> = Vec::new();
     let s_iterator = s.char_indices();
