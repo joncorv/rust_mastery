@@ -52,7 +52,9 @@ pub fn test_reverse_string() {
 
 /// ## Classic two-pointer problem. Slow/Fast
 /// 283. Move Zeroes
+///
 /// <https://leetcode.com/problems/move-zeroes/>
+///
 /// ```
 /// pub fn move_zeroes(nums: &mut [i32]) {
 ///     // body here

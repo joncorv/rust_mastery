@@ -35,7 +35,8 @@ fn main() {
     // pg_04_recursion_permutations_v2::pg_02_recursion_permutations_v2();
     // pg_05_graph_maze::test_graph_maze();
     // pg_06_lifetime_annotations::test_get_largest();
+    // playground::pg_07_string_manipulation::string_manipulation();
     // dsa::_01_two_pointers::test_reverse_string();
     // dsa::_01_two_pointers::test_move_zeroes();
-    playground::pg_07_string_manipulation::string_manipulation();
+    dsa::_02_binary_search::test_binary_search();
 }
