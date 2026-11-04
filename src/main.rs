@@ -39,5 +39,5 @@ fn main() {
     // dsa::_01_two_pointers::test_reverse_string();
     // dsa::_01_two_pointers::test_move_zeroes();
     // dsa::_02_binary_search::test_binary_search();
-    dsa::_03_sets_and_maps::basic_hash();
+    // dsa::_03_sets_and_maps::basic_hashset_functions();
 }
