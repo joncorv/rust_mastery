@@ -1,22 +1,79 @@
-//! ## Triggers
-//! Sorted data, need to find some data inside, 0(n log n)
-//!
-//! ## Keywords
-//! | dummy | dummy | dummy | dummy | dummy |
-//! |---|---|---|---|---|
-//!
-//! ```
-//! pub fn some_function()  {
-//!     // something body of function
-//!}
-//! ```
-//!
-//! ## Most Important Functions
-//! - insert(&mut self, value<T>) -> Option<T>
-//! - get(&self, value: &T) -> Option<&T>
-//! - Another Thing
+//! Sets & Maps. Notes live in book/src/patterns/sets_and_maps.md; code is included by ANCHOR.
 
-use std::collections::HashSet;
+use std::collections::{HashMap, HashSet};
+
+// ANCHOR: is_anagram
+/// 242. Valid Anagram: a fixed-size array as a "map" when keys are a-z.
+pub fn is_anagram(s: &str, t: &str) -> bool {
+    if s.len() != t.len() {
+        return false;
+    }
+    let mut counts = [0i32; 26];
+    for (a, b) in s.bytes().zip(t.bytes()) {
+        counts[(a - b'a') as usize] += 1;
+        counts[(b - b'a') as usize] -= 1;
+    }
+    counts.iter().all(|&c| c == 0)
+}
+// ANCHOR_END: is_anagram
+
+// ANCHOR: group_anagrams
+/// 49. Group Anagrams: map from a canonical KEY to the group.
+pub fn group_anagrams(words: &[&str]) -> Vec<Vec<String>> {
+    let mut groups: HashMap<[u8; 26], Vec<String>> = HashMap::new();
+    for w in words {
+        let mut key = [0u8; 26];
+        for b in w.bytes() {
+            key[(b - b'a') as usize] += 1;
+        }
+        groups.entry(key).or_default().push(w.to_string());
+    }
+    groups.into_values().collect()
+}
+// ANCHOR_END: group_anagrams
+
+// ANCHOR: longest_consecutive
+/// 128. Longest Consecutive Sequence: O(n) by only counting up from sequence STARTS.
+pub fn longest_consecutive(nums: &[i32]) -> usize {
+    let set: HashSet<i32> = nums.iter().copied().collect();
+    let mut best = 0;
+    for &x in &set {
+        if set.contains(&(x - 1)) {
+            continue; // not the start of a run
+        }
+        let mut len = 1;
+        while set.contains(&(x + len as i32)) {
+            len += 1;
+        }
+        best = best.max(len);
+    }
+    best
+}
+// ANCHOR_END: longest_consecutive
+
+#[test]
+fn test_sets_and_maps() {
+    assert!(is_anagram("anagram", "nagaram"));
+    assert!(!is_anagram("rat", "car"));
+
+    let mut groups: Vec<Vec<String>> = group_anagrams(&["eat", "tea", "tan", "ate", "nat", "bat"])
+        .into_iter()
+        .map(|mut g| {
+            g.sort();
+            g
+        })
+        .collect();
+    groups.sort();
+    assert_eq!(groups, [vec!["ate", "eat", "tea"], vec!["bat"], vec!["nat", "tan"]]);
+
+    assert_eq!(longest_consecutive(&[100, 4, 200, 1, 3, 2]), 4);
+    assert_eq!(longest_consecutive(&[]), 0);
+}
+
+// ---------------------------------------------------------------------------------------
+// My original exploration of the HashSet / HashMap APIs
+// (the polished version lives in src/ds/hashset.rs and src/ds/hashmap.rs)
+
 pub fn basic_hashset_functions() {
     let mut hash: HashSet<String> = HashSet::new();
 
@@ -53,7 +110,6 @@ pub fn basic_hashset_functions() {
     assert_eq!(odds, vec![1, 3, 5, 7]);
 }
 
-use std::collections::HashMap;
 pub fn basic_hashmap_functions() {
     let mut map: HashMap<String, i32> = HashMap::new();
 

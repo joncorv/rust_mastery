@@ -1,5 +1,6 @@
 #![allow(dead_code, unused_imports, unused_variables)]
 mod code_practice;
+mod ds;
 mod dsa;
 mod playground;
 

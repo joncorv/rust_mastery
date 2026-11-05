@@ -1,0 +1,11 @@
+[book]
+title = "Rust Interview Guide"
+authors = ["joncorv"]
+src = "src"
+
+[output.html]
+# The site is served from https://joncorv.github.io/rust_mastery/
+site-url = "/rust_mastery/"
+# Code comes from the crate and isn't standalone, so hide the "run" button.
+[output.html.playground]
+runnable = false
